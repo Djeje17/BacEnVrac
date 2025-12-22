@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Conteneur utilisateur (peut être absent)
   const userButtons = document.getElementById("user-buttons");
 
-  const estConnecte = localStorage.getItem("connecte") === "true";
+  const estConnecte = !!localStorage.getItem("connecte");
+
 
   // 👉 Si l'utilisateur est connecté
   if (estConnecte) {
