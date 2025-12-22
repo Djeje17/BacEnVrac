@@ -1,56 +1,80 @@
-// Récupère l’état de connexion depuis le localStorage
-const estConnecte = localStorage.getItem("connecte");
+/***************************************************
+ * CHARGEMENT DU PROFIL DE L’UTILISATEUR CONNECTÉ
+ ***************************************************/
 
-// Récupère le profil utilisateur stocké
-const profilStocke = localStorage.getItem("profilUtilisateur");
+// Récupère l’email de l’utilisateur connecté
+const emailConnecte = localStorage.getItem("connecte");
 
-// Si l’utilisateur n’est pas connecté ou si aucun profil n’existe,
-// on le redirige vers la page de connexion
-if (!estConnecte || !profilStocke) {
+// Si personne n’est connecté → redirection
+if (!emailConnecte) {
   window.location.href = "connexion.html";
 }
 
-// Transforme le profil stocké (JSON) en objet JavaScript
-const profil = JSON.parse(profilStocke);
+// Récupère la liste complète des utilisateurs
+const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
 
-// Affiche un message de bienvenue avec le prénom de l’utilisateur
+// Recherche l’utilisateur correspondant à l’email connecté
+const profil = utilisateurs.find(
+  utilisateur => utilisateur.email === emailConnecte
+);
+
+// Si l’utilisateur n’existe pas (sécurité)
+if (!profil) {
+  alert("Utilisateur introuvable");
+  localStorage.removeItem("connecte");
+  window.location.href = "connexion.html";
+}
+
+/***************************************************
+ * AFFICHAGE DES INFORMATIONS DU PROFIL
+ ***************************************************/
+
+// Message de bienvenue
 document.getElementById("bonjourPrenom").textContent = profil.prenom;
 
-// Préremplit les champs du formulaire avec les données du profil
+// Préremplissage du formulaire
 document.getElementById("nom").value = profil.nom;
 document.getElementById("prenom").value = profil.prenom;
 document.getElementById("adresse").value = profil.adresse;
 document.getElementById("email").value = profil.email;
 
-// Gestion du bouton de déconnexion
-document.getElementById("deconnexion").addEventListener("click", () => {
-  // Supprime l’état de connexion
-  localStorage.removeItem("connecte");
+/***************************************************
+ * DÉCONNEXION
+ ***************************************************/
 
-  // Redirige vers la page de connexion
+document.getElementById("deconnexion").addEventListener("click", () => {
+  localStorage.removeItem("connecte");
   window.location.href = "connexion.html";
 });
 
-// Gestion du bouton de suppression de compte
+/***************************************************
+ * SUPPRESSION DU COMPTE
+ ***************************************************/
+
 document.getElementById("supprimerCompte").addEventListener("click", () => {
 
-  // Affiche une boîte de confirmation pour éviter une suppression accidentelle
   const confirmation = confirm(
     "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible."
   );
 
-  // Si l’utilisateur confirme la suppression
   if (confirmation) {
+
+    // Supprime l’utilisateur du tableau
+    const utilisateursFiltres = utilisateurs.filter(
+      utilisateur => utilisateur.email !== emailConnecte
+    );
+
+    // Sauvegarde le tableau mis à jour
+    localStorage.setItem("utilisateurs", JSON.stringify(utilisateursFiltres));
+
     // Supprime l’état de connexion
     localStorage.removeItem("connecte");
 
-    // Supprime définitivement le profil utilisateur
-    localStorage.removeItem("profilUtilisateur");
-
-    // Redirige vers la page d’accueil
+    // Redirection
     window.location.href = "index.html";
   }
 });
+
 
 
 
