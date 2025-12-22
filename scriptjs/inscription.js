@@ -1,57 +1,79 @@
-// Fonction asynchrone qui transforme un mot de passe en hash SHA-256
+/***************************************************
+ * FONCTION DE HASH DU MOT DE PASSE
+ ***************************************************/
+
+// Fonction asynchrone qui prend un mot de passe en clair
+// et retourne son hash SHA-256 sous forme de texte hexadécimal
 async function hashPassword(password) {
-  // Conversion du mot de passe (string) en données binaires
+
+  // Transforme le mot de passe (string) en données binaires
+  // car l’API crypto ne travaille pas avec des strings
   const data = new TextEncoder().encode(password);
 
-  // Calcul du hash SHA-256 (opération asynchrone)
+  // Calcule le hash SHA-256 (opération asynchrone)
   const hash = await crypto.subtle.digest("SHA-256", data);
 
-  // Conversion du résultat binaire en chaîne hexadécimale lisible
+  // Convertit le résultat binaire en tableau d’octets,
+  // puis chaque octet en hexadécimal sur 2 caractères
   return Array.from(new Uint8Array(hash))
     .map(b => b.toString(16).padStart(2, "0"))
     .join("");
 }
 
-// Écoute de la soumission du formulaire d’inscription
+
+/***************************************************
+ * GESTION DE L’INSCRIPTION
+ ***************************************************/
+
+// On écoute la soumission du formulaire d’inscription
 document.getElementById("formInscription").addEventListener("submit", async e => {
-  // Empêche le rechargement de la page
+
+  // Empêche le rechargement automatique de la page
   e.preventDefault();
 
-  console.log("🟡 Étape 1 : submit détecté");
+  // Récupère la liste des utilisateurs déjà enregistrés
+  // Si elle n’existe pas encore, on crée un tableau vide
+  const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
 
-  // Vérifie si un profil utilisateur existe déjà dans le localStorage
-  const profilExistant = localStorage.getItem("profilUtilisateur");
-  console.log("🟡 Étape 2 : profilExistant =", profilExistant);
+  // Vérifie si l’email saisi existe déjà dans la liste
+  // some() renvoie true si AU MOINS un utilisateur a le même email
+  const emailExiste = utilisateurs.some(
+    utilisateur => utilisateur.email === email.value.trim()
+  );
 
-  // Si un compte existe déjà, on bloque l’inscription
-  if (profilExistant !== null) {
-    alert("Compte déjà existant");
-    return;
+  // Si l’email existe déjà, on bloque l’inscription
+  if (emailExiste) {
+    alert("Un compte avec cet email existe déjà");
+    return; // arrêt du script
   }
 
-  // Création de l’objet profil à partir des champs du formulaire
-  const profil = {
-    // Récupération et nettoyage des valeurs saisies
+  // Création de l’objet représentant le nouvel utilisateur
+  const nouvelUtilisateur = {
+
+    // Récupération des valeurs des champs du formulaire
+    // trim() enlève les espaces inutiles
     nom: nom.value.trim(),
     prenom: prenom.value.trim(),
     adresse: adresse.value.trim(),
     email: email.value.trim(),
 
-    // Le mot de passe n’est jamais stocké en clair mais sous forme de hash
+    // Le mot de passe n’est JAMAIS stocké en clair
+    // On stocke uniquement son hash
     passwordHash: await hashPassword(motdepasse.value)
   };
 
-  console.log("🟢 Étape 3 : profil à enregistrer =", profil);
+  // Ajoute le nouvel utilisateur au tableau existant
+  utilisateurs.push(nouvelUtilisateur);
 
-  // Sauvegarde du profil dans le navigateur sous forme JSON
-  localStorage.setItem("profilUtilisateur", JSON.stringify(profil));
+  // Sauvegarde la liste complète des utilisateurs dans le localStorage
+  // JSON.stringify est nécessaire car le localStorage ne stocke que du texte
+  localStorage.setItem("utilisateurs", JSON.stringify(utilisateurs));
 
-  // Indique que l’utilisateur est considéré comme connecté
-  localStorage.setItem("connecte", "true");
+  // Stocke l’email de l’utilisateur connecté
+  // (permet de savoir qui est connecté sur les autres pages)
+  localStorage.setItem("connecte", email.value.trim());
 
-  console.log("🟢 Étape 4 : profil enregistré");
-
-  // Redirection vers la page profil
+  // Redirige l’utilisateur vers sa page de profil
   window.location.href = "profil.html";
 });
 
