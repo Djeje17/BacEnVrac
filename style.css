@@ -1,0 +1,317 @@
+
+
+/* Style général de la page */
+body {
+    text-align: center;                  /* Centre le texte par défaut */
+    font-family: Arial, sans-serif;      /* Police simple et lisible */
+    display: flex;                       /* Utilise Flexbox */
+    flex-direction: column;              /* Organisation verticale */
+    background-color: aqua;              /* Couleur de fond */
+    min-height: 100vh;                   /* Hauteur minimum = hauteur de l’écran */
+    position: relative;                  /* Nécessaire pour le pseudo-élément ::before */
+}
+
+/* Image de fond transparente placée derrière tout le contenu */
+body::before {
+    content: "";                         /* Pseudo-élément obligatoire */
+    position: fixed;                     /* Reste fixe lors du scroll */
+    inset: 0;                            /* Équivaut à top/right/bottom/left: 0 */
+    background-image: url("image/bacdisque.jpg"); /* Image de fond */
+    background-size: cover;              /* L’image couvre tout l’écran */
+    background-position: center;         /* Centre l’image */
+    background-repeat: no-repeat;        /* Pas de répétition */
+    opacity: 0.20;                       /* Transparence de l’image */
+    z-index: -1;                         /* Place l’image derrière le contenu */
+}
+
+/* Zone principale qui prend tout l’espace disponible */
+main {
+    flex: 1;                             /* Pousse le footer en bas */
+}
+
+/* Style commun au header et au footer */
+header,
+footer {
+    background-color: fuchsia;           /* Couleur de fond */
+    width: 100%;                         /* Pleine largeur */
+}
+
+/* Images responsives */
+.img {
+    width: 100%;                         /* Prend toute la largeur */
+    max-width: 100%;                     /* Ne dépasse jamais */
+    height: auto;                        /* Garde les proportions */
+}
+
+/* Petites images (ex : logo) */
+.mag {
+    max-height: 40px;                    /* Hauteur maximale */
+    width: auto;                         /* Largeur proportionnelle */
+}
+
+/* Mise en page du footer */
+footer {
+    display: flex;                       /* Flexbox */
+    align-items: center;                 /* Alignement vertical */
+    justify-content: center;             /* Alignement horizontal */
+    gap: 40px;                           /* Espace entre les éléments */
+}
+
+/* Conteneur de boutons */
+.bouton {
+    display: flex;
+  width: 100%;                       /* Aligne les boutons horizontalement */
+}
+
+/* Boutons et liens dans le conteneur .bouton */
+.bouton button,
+.bouton a {
+    flex: 1;                             /* Tous les boutons prennent la même largeur */
+    width: 100%;                         /* Largeur maximale */
+    background-color: lawngreen;         /* Couleur verte */
+    border-radius: 0 0 6px 6px;           /* Coins arrondis en bas */
+}
+
+/* Titre du header */
+header h1 {
+    margin: 0;                           /* Supprime les marges par défaut */
+}
+
+/* ============================= */
+/* FORMULAIRE                   */
+/* ============================= */
+
+/* Cible tous les formulaires de la page */
+form {
+
+    /* Supprime tout espace intérieur du formulaire
+       → évite que le contenu (inputs, boutons) soit décalé */
+    padding: 0;
+
+    /* Indique que la largeur totale du formulaire
+       inclut le padding et les bordures
+       → empêche tout dépassement */
+    box-sizing: border-box;
+
+    /* Le formulaire ne dépassera jamais 600px de large
+       → lisible et confortable sur écran d’ordinateur */
+    max-width: 600px;
+
+    /* Centre le formulaire horizontalement dans la page
+       0    = aucune marge en haut et en bas
+       auto = marges automatiques à gauche et à droite */
+    margin: 0 auto;
+}
+
+input,
+form button {
+    width: 100%;
+    box-sizing: border-box;  /* ✅ clé du bon alignement */
+}
+
+
+/* ============================= */
+/* CONTENEUR PRINCIPAL           */
+/* ============================= */
+
+/* Cible la balise <main> ET la classe .contenu
+   (utile car tu utilises les deux selon les pages) */
+main,
+.contenu {
+
+    /* Ajoute un espace de 16px à gauche
+       → empêche le contenu de coller au bord sur mobile */
+    padding-left: 16px;
+
+    /* Ajoute un espace de 16px à droite
+       → même confort visuel des deux côtés */
+    padding-right: 16px;
+
+    /* Inclut le padding dans la largeur totale
+       → évite les débordements horizontaux */
+    box-sizing: border-box;
+}
+
+
+/* Style des labels */
+label {
+    display: block;                      /* Chaque label sur une ligne */
+    margin-bottom: 5px;                  /* Espacement en bas */
+    text-align: left;                    /* Alignement à gauche */
+}
+
+/* Champs de saisie */
+input {
+    width: 100%;                         /* Pleine largeur */
+    padding: 10px;                       /* Espace intérieur */
+    margin-bottom: 15px;                 /* Espace sous le champ */
+}
+
+/* Bouton principal d’envoi */
+.envoi {
+    width: 100%;                         /* Pleine largeur */
+    margin-top: 40px;                    /* Espace au-dessus */
+    margin-bottom: 30px;                 /* Espace en dessous */
+    background-color: cornflowerblue;    /* Couleur bleue */
+    border-radius: 6px;                  /* Coins arrondis */
+}
+
+/* Bouton de retour */
+.retour {
+    margin-bottom: 30px;                 /* Espace en bas */
+    margin-top: 20px;                    /* Espace en haut */
+    max-width: 200px;                    /* Largeur max */
+    background-color: cornflowerblue;    /* Couleur bleue */
+    border-radius: 6px;                  /* Coins arrondis */
+}
+
+/* Padding léger pour le formulaire et le bouton d’envoi */
+form {
+    padding: 1px;
+}
+form button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Style général des boutons */
+button {
+    width: 100%;                         /* Pleine largeur */
+    padding: 5px;                       /* Espace intérieur */
+}
+
+/* Bouton d’accueil */
+.accueil {
+    width: 100%;
+    max-width: 180px;                   /* Largeur maximale */
+    margin-bottom: 30px;                /* Espace en bas */
+    padding: 5px;                       /* Padding */
+    background-color: cornflowerblue;   /* Couleur bleue */
+    border-radius: 10px;                /* Coins très arrondis */
+}
+
+/* Boutons larges : prennent toute la largeur disponible */
+.bout {
+    width: 100%;                 /* Le bouton occupe 100% de son conteneur */
+    padding: 10px;               /* Espace intérieur pour un bouton plus confortable */
+}
+
+/* ===================== */
+/*        VINYLE         */
+/* ===================== */
+
+.vinyl {
+  width: 100px;                  /* Diamètre du disque */
+  height: 100px;                 /* Hauteur = largeur → cercle */
+  border-radius: 50%;            /* Transforme le carré en cercle */
+  background: #000;              /* Couleur noire du vinyle */
+  animation: spin 2.5s linear infinite; /* Rotation continue et fluide */
+}
+
+/* Traits radiaux pour visualiser la rotation */
+.vinyl::before {
+  content: "";                   /* Obligatoire pour afficher le pseudo-élément */
+  position: absolute;            /* Positionné par rapport au vinyle */
+  inset: 0;                      /* Colle aux 4 bords */
+  border-radius: 50%;            /* Conserve la forme circulaire */
+  background:
+    repeating-conic-gradient(
+      from 0deg,                 /* Départ du gradient */
+      #f95454 0deg 3deg,         /* Trait rouge fin */
+      #000 3deg 40deg            /* Espace noir large */
+    );
+}
+
+/* Petit label décoratif au centre */
+.label {
+  position: absolute;            /* Position libre dans le vinyle */
+  top: 50%;                      /* Centre vertical */
+  left: 50%;                     /* Centre horizontal */
+  width: 10px;                   /* Taille du label */
+  height: 10px;
+  background: #c33;              /* Rouge foncé */
+  border-radius: 50%;            /* Cercle parfait */
+  transform: translate(-50%, -50%); /* Centrage précis */
+  z-index: 2;                    /* Au-dessus des traits */
+}
+
+/* Trou central du vinyle */
+.hole {
+  position: absolute;            /* Position libre */
+  top: 50%;                      /* Centre vertical */
+  left: 50%;                     /* Centre horizontal */
+  width: 10px;                   /* Taille du trou */
+  height: 10px;
+  background: #000;              /* Noir (vide) */
+  border-radius: 50%;            /* Cercle */
+  transform: translate(-50%, -50%); /* Centrage parfait */
+  z-index: 3;                    /* Au-dessus de tout */
+}
+
+/* Animation de rotation */
+@keyframes spin {
+  from { transform: rotate(0deg); }   /* Départ sans rotation */
+  to   { transform: rotate(360deg); } /* Un tour complet */
+}
+
+/* ===================== */
+/*        HEADER         */
+/* ===================== */
+
+header {
+  display: flex;                 /* Organisation horizontale */
+  align-items: center;           /* Centrage vertical des éléments */
+  padding: 0px;                  /* Aucun padding */
+  height: 120px;                 /* Hauteur fixe du header */
+  background-color: fuchsia;     /* Couleur de fond */
+}
+
+/* Zone gauche du header (vinyle) */
+.header-left {
+  margin-left: 30px;             /* Distance de 30px du bord gauche */
+  display: flex;                 /* Flexbox interne */
+  align-items: center;           /* Vinyle centré verticalement */
+}
+
+/* Zone centrale (titre) */
+.header-center {
+  flex: 1;                       /* Prend tout l’espace restant */
+  text-align: center;            /* Texte centré horizontalement */
+}
+
+/* Zone droite (réserve d’espace) */
+.header-right {
+  width: 100px;                  /* Largeur fixe pour l’équilibre visuel */
+}
+
+/* Texte "BAC EN VRAC" affiché sur le vinyle */
+.vinyl-text {
+  position: absolute;            /* Positionné dans le vinyle */
+  top: 50%;                      /* Centre vertical */
+  left: 50%;                     /* Centre horizontal */
+  transform: translate(-50%, -50%); /* Centrage précis */
+  color: rgb(255, 255, 255);     /* Texte blanc (contraste fort) */
+  font-weight: bold;             /* Texte épais */
+  font-size: 16px;               /* Taille lisible */
+  letter-spacing: 2px;           /* Espacement des lettres (style vinyle) */
+  text-transform: uppercase;     /* Tout en majuscules */
+  z-index: 1;                    /* Au-dessus des traits */
+  pointer-events: none;          /* Le texte ne bloque pas les clics */
+}
+@media (max-width: 768px) {
+    form {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 0 12px;
+    }
+}
+
+
+
+
+    

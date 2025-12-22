@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Profil</title>
+</head>
+
+<body>
+
+  <!-- Contenu principal de la page -->
+  <main>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+      <!-- Partie gauche du header : vinyle animé -->
+      <div class="header-left">
+        <div class="vinyl">
+
+          <!-- Texte visible sur le disque vinyle en rotation -->
+          <div class="vinyl-text">BAC EN VRAC</div>
+
+          <!-- Élément décoratif central -->
+          <div class="label"></div>
+
+          <!-- Trou central du vinyle -->
+          <div class="hole"></div>
+
+        </div>
+      </div>
+
+      <!-- Partie centrale du header : titre du site -->
+      <div class="header-center">
+        <strong>
+          <h1>
+            BAC<br>
+            en<br>
+            VRAC
+          </h1>
+        </strong>
+      </div>
+
+      <!-- Partie droite du header (vide, sert à équilibrer visuellement) -->
+      <div class="header-right"></div>
+
+    </header>
+    <!-- =============== FIN HEADER =============== -->
+
+    <!-- Bouton de déconnexion -->
+    <div class="bouton">
+      <button id="deconnexion">Se déconnecter</button>
+    </div>
+
+    <!-- Message de bienvenue personnalisé -->
+    <h2>
+      Bonjour <span id="bonjourPrenom"></span>
+    </h2>
+
+    <!-- Titre de la section informations -->
+    <h3>Vos informations</h3>
+
+    <!-- Formulaire affichant les informations utilisateur -->
+    <form id="profil">
+
+      <!-- Nom (lecture seule) -->
+      <input type="text" id="nom" placeholder="Nom" readonly>
+
+      <!-- Prénom (lecture seule) -->
+      <input type="text" id="prenom" placeholder="Prénom" readonly>
+
+      <!-- Adresse (lecture seule) -->
+      <input type="text" id="adresse" placeholder="Adresse" readonly>
+
+      <!-- Email (lecture seule) -->
+      <input type="email" id="email" placeholder="Email" readonly>
+
+      <!-- Mot de passe masqué (lecture seule) -->
+      <input type="password" id="password" value="********" readonly>
+
+    </form>
+
+    <!-- Bouton retour vers la page précédente -->
+    <div>
+      <button class="retour" onclick="history.back()">RETOUR</button>
+    </div>
+
+    <!-- Bouton retour vers l’accueil -->
+    <div>
+      <a href="index.html">
+        <button class="accueil">
+          retour accueil
+        </button>
+      </a>
+    </div>
+
+    <!-- Bouton suppression du compte utilisateur -->
+    <div>
+      <button class="accueil" id="supprimerCompte">
+        Supprimer le compte
+      </button>
+    </div>
+
+    <!-- Script JS qui gère l’affichage et les actions du profil -->
+    <script src="scriptjs/profil.js"></script>
+
+  </main>
+  <!-- =============== FIN MAIN =============== -->
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+
+    <!-- Mentions légales et contact -->
+    <p>
+      mentions légales &nbsp;&nbsp;&nbsp;&nbsp; contact
+    </p>
+
+    <!-- Icônes réseaux sociaux -->
+    <img src="image/instagram.svg" class="mag">
+    <img src="image/facebook.svg" class="mag">
+
+  </footer>
+  <!-- =============== FIN FOOTER =============== -->
+
+</body>
+
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+    
+</head>
+    <body>
+
+    <!-- Contenu principal de la page -->
+    <main>
+
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+
+            <!-- Zone gauche du header : logo vinyle animé -->
+            <div class="header-left">
+                <div class="vinyl">
+                    <!-- Texte affiché sur le vinyle, tourne avec lui -->
+                    <div class="vinyl-text">BAC EN VRAC</div>
+
+                    <!-- Élément décoratif central -->
+                    <div class="label"></div>
+
+                    <!-- Trou central du vinyle -->
+                    <div class="hole"></div>
+                </div>
+            </div>
+
+            <!-- Zone centrale du header : titre principal du site -->
+            <div class="header-center">
+                <strong>
+                    <h1>
+                        BAC<br>
+                        en<br>
+                        VRAC
+                    </h1>
+                </strong>
+            </div>
+
+            <!-- Zone droite du header (vide, sert à l’équilibre visuel) -->
+            <div class="header-right"></div>
+
+        </header>
+        <!-- =============== FIN HEADER =============== -->
+
+        <!-- Bande de boutons de navigation -->
+        <div class="bouton">
+
+            <!-- Lien vers la page d’inscription -->
+            <a href="inscription.html">
+                <button>inscription</button>
+            </a>
+
+            <!-- Lien vers la page de connexion -->
+            <a href="connexion.html">
+                <button>connexion</button>
+            </a>
+
+        </div>
+
+        <br>
+
+        <!-- Image principale de la page -->
+        <img class="img" src="image/bacs.jpg">
+
+        <!-- Message d’accueil -->
+        <h2>
+            Bonjour<br>
+            Bienvenue sur notre site
+        </h2>
+
+        <!-- Espacement vertical -->
+        <br><br><br><br><br>
+
+        <!-- Bouton profil : affiché seulement si l’utilisateur est connecté -->
+        <a href="profil.html">
+            <button class="accueil" id="btn-profil" style="display:none;">
+                Profil
+            </button>
+        </a>
+
+    </main>
+    <!-- =============== FIN MAIN =============== -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <!-- Mentions légales et contact -->
+        <p>
+            mentions légales &nbsp;&nbsp;&nbsp;&nbsp;contact
+        </p>
+
+        <!-- Icônes réseaux sociaux -->
+        <img src="image/instagram.svg" class="mag">
+        <img src="image/facebook.svg" class="mag">
+
+    </footer>
+    <!-- =============== FIN FOOTER =============== -->
+
+    <!-- Script JavaScript pour gérer la connexion / déconnexion -->
+    <script src="scriptjs/dec.js"></script>
+
+</body>
+
+</html>

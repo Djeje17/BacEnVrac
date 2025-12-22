@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Connexion</title>
+</head>
+
+<body>
+
+    <!-- Contenu principal de la page -->
+    <main>
+
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+
+            <!-- Zone gauche du header : vinyle animé -->
+            <div class="header-left">
+                <div class="vinyl">
+                    <!-- Texte visible sur le disque (tourne avec lui) -->
+                    <div class="vinyl-text">BAC EN VRAC</div>
+
+                    <!-- Décoration centrale -->
+                    <div class="label"></div>
+                    <div class="hole"></div>
+                </div>
+            </div>
+
+            <!-- Zone centrale du header : titre du site -->
+            <div class="header-center">
+                <strong>
+                    <h1>
+                        BAC<br>
+                        en<br>
+                        VRAC
+                    </h1>
+                </strong>
+            </div>
+
+            <!-- Zone droite du header (vide pour équilibrer) -->
+            <div class="header-right"></div>
+
+        </header>
+        <!-- =============== FIN HEADER =============== -->
+
+        <!-- Bande/bouton décoratif sous le header -->
+        <div class="bouton">
+            <button class="bout"></button>
+        </div>
+
+        <!-- Titre de la page -->
+        <h2>CONNEXION</h2>
+
+        <!-- ================= FORMULAIRE ================= -->
+        <form id="formConnexion">
+
+            <!-- Champ email -->
+            <label>Email</label>
+            <input type="email" id="email" required>
+            <br><br>
+
+            <!-- Champ mot de passe -->
+            <label>Mot de passe</label>
+            <input type="password" id="motdepasse" required>
+            <br><br>
+
+            <!-- Bouton d’envoi du formulaire -->
+            <button class="envoi" type="submit">VALIDER</button>
+
+        </form>
+        <!-- =============== FIN FORMULAIRE =============== -->
+
+        <!-- Zone d’affichage des messages (erreur / succès) -->
+        <p id="message"></p>
+
+        <!-- Script JS pour gérer la connexion -->
+        <script src="scriptjs/connexion.js"></script>
+
+        <!-- Bouton retour à la page précédente -->
+        <div>
+            <button class="retour" onclick="history.back()">RETOUR</button>
+        </div>
+
+        <!-- Bouton profil (caché par défaut, affiché si connecté) -->
+        <a href="profil.html">
+            <button class="accueil" id="btn-profil" style="display:none;">
+                Profil
+            </button>
+        </a>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <!-- Mentions légales et contact -->
+        <p>mentions légales contact</p>
+
+        <!-- Icônes réseaux sociaux -->
+        <img src="image/instagram.svg" class="mag">
+        <img src="image/facebook.svg" class="mag">
+    </footer>
+    <!-- =============== FIN FOOTER =============== -->
+
+    <!-- Script JS pour la gestion de session / déconnexion -->
+    <script src="scriptjs/dec.js"></script>
+
+</body>
+</html>
+
+
