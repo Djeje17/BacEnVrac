@@ -3,10 +3,10 @@
 /* Style général de la page */
 body {
     text-align: center;                  /* Centre le texte par défaut */
-    font-family: Arial, sans-serif;      /* Police simple et lisible */
-    display: flex;                       /* Utilise Flexbox */
+    font-family: Arial, sans-serif;      
+    display: flex;                      
     flex-direction: column;              /* Organisation verticale */
-    background-color: aqua;              /* Couleur de fond */
+    background-color: aqua;              
     min-height: 100vh;                   /* Hauteur minimum = hauteur de l’écran */
     position: relative;                  /* Nécessaire pour le pseudo-élément ::before */
 }
@@ -24,64 +24,64 @@ body::before {
     z-index: -1;                         /* Place l’image derrière le contenu */
 }
 
-/* Zone principale qui prend tout l’espace disponible */
+
 main {
     flex: 1;                             /* Pousse le footer en bas */
 }
 
-/* Style commun au header et au footer */
+
 header,
 footer {
-    background-color: fuchsia;           /* Couleur de fond */
-    width: 100%;                         /* Pleine largeur */
+    background-color: fuchsia;           
+    width: 100%;                         
 }
 
-/* Images responsives */
+
 .img {
-    width: 100%;                         /* Prend toute la largeur */
-    max-width: 100%;                     /* Ne dépasse jamais */
-    height: auto;                        /* Garde les proportions */
+    width: 100%;                       
+    max-width: 100%;                     
+    height: auto;                       
 }
 
-/* Petites images (ex : logo) */
+
 .mag {
-    max-height: 40px;                    /* Hauteur maximale */
-    width: auto;                         /* Largeur proportionnelle */
+    max-height: 40px;                    
+    width: auto;                        
 }
 
-/* Mise en page du footer */
+
 footer {
-    display: flex;                       /* Flexbox */
+    display: flex;                       
     align-items: center;                 /* Alignement vertical */
     justify-content: center;             /* Alignement horizontal */
     gap: 40px;                           /* Espace entre les éléments */
 }
 
-/* Conteneur de boutons */
+
 .bouton {
     display: flex;
   width: 100%;                       /* Aligne les boutons horizontalement */
 }
 
-/* Boutons et liens dans le conteneur .bouton */
+
 .bouton button,
 .bouton a {
     flex: 1;                             /* Tous les boutons prennent la même largeur */
-    width: 100%;                         /* Largeur maximale */
-    background-color: lawngreen;         /* Couleur verte */
-    border-radius: 0 0 6px 6px;           /* Coins arrondis en bas */
+    width: 100%;                         
+    background-color: lawngreen;         
+    border-radius: 0 0 6px 6px;           
 }
 
-/* Titre du header */
+
 header h1 {
-    margin: 0;                           /* Supprime les marges par défaut */
+    margin: 0;                           
 }
 
 /* ============================= */
 /* FORMULAIRE                   */
 /* ============================= */
 
-/* Cible tous les formulaires de la page */
+
 form {
 
     /* Supprime tout espace intérieur du formulaire
@@ -93,8 +93,6 @@ form {
        → empêche tout dépassement */
     box-sizing: border-box;
 
-    /* Le formulaire ne dépassera jamais 600px de large
-       → lisible et confortable sur écran d’ordinateur */
     max-width: 600px;
 
     /* Centre le formulaire horizontalement dans la page
@@ -114,13 +112,9 @@ form button {
 /* CONTENEUR PRINCIPAL           */
 /* ============================= */
 
-/* Cible la balise <main> ET la classe .contenu
-   (utile car tu utilises les deux selon les pages) */
 main,
 .contenu {
 
-    /* Ajoute un espace de 16px à gauche
-       → empêche le contenu de coller au bord sur mobile */
     padding-left: 16px;
 
     /* Ajoute un espace de 16px à droite
@@ -133,39 +127,38 @@ main,
 }
 
 
-/* Style des labels */
 label {
     display: block;                      /* Chaque label sur une ligne */
-    margin-bottom: 5px;                  /* Espacement en bas */
-    text-align: left;                    /* Alignement à gauche */
+    margin-bottom: 5px;                  
+    text-align: left;                    
 }
 
-/* Champs de saisie */
+
 input {
-    width: 100%;                         /* Pleine largeur */
-    padding: 10px;                       /* Espace intérieur */
-    margin-bottom: 15px;                 /* Espace sous le champ */
+    width: 100%;                         
+    padding: 10px;                       
+    margin-bottom: 15px;                 
 }
 
-/* Bouton principal d’envoi */
+
 .envoi {
-    width: 100%;                         /* Pleine largeur */
-    margin-top: 40px;                    /* Espace au-dessus */
-    margin-bottom: 30px;                 /* Espace en dessous */
-    background-color: cornflowerblue;    /* Couleur bleue */
-    border-radius: 6px;                  /* Coins arrondis */
+    width: 100%;                         
+    margin-top: 40px;                    
+    margin-bottom: 30px;                 
+    background-color: cornflowerblue;    
+    border-radius: 6px;   
+                  
 }
 
-/* Bouton de retour */
 .retour {
-    margin-bottom: 30px;                 /* Espace en bas */
-    margin-top: 20px;                    /* Espace en haut */
-    max-width: 200px;                    /* Largeur max */
-    background-color: cornflowerblue;    /* Couleur bleue */
-    border-radius: 6px;                  /* Coins arrondis */
+    margin-bottom: 30px;                 
+    margin-top: 20px;                    
+    max-width: 200px;                    
+    background-color: cornflowerblue;   
+    border-radius: 6px;                  
 }
 
-/* Padding léger pour le formulaire et le bouton d’envoi */
+
 form {
     padding: 1px;
 }
@@ -175,20 +168,20 @@ form button {
 }
 
 
-/* Style général des boutons */
+
 button {
-    width: 100%;                         /* Pleine largeur */
-    padding: 5px;                       /* Espace intérieur */
+    width: 100%;                         
+    padding: 5px;                       
 }
 
-/* Bouton d’accueil */
+
 .accueil {
     width: 100%;
-    max-width: 180px;                   /* Largeur maximale */
-    margin-bottom: 30px;                /* Espace en bas */
-    padding: 5px;                       /* Padding */
-    background-color: cornflowerblue;   /* Couleur bleue */
-    border-radius: 10px;                /* Coins très arrondis */
+    max-width: 180px;                   
+    margin-bottom: 30px;                
+    padding: 5px;                       
+    background-color: cornflowerblue;   
+    border-radius: 10px;                
 }
 
 /* Boutons larges : prennent toute la largeur disponible */
@@ -262,9 +255,9 @@ button {
 header {
   display: flex;                 /* Organisation horizontale */
   align-items: center;           /* Centrage vertical des éléments */
-  padding: 0px;                  /* Aucun padding */
+  padding: 0px;                  
   height: 120px;                 /* Hauteur fixe du header */
-  background-color: fuchsia;     /* Couleur de fond */
+  background-color: fuchsia;     
 }
 
 /* Zone gauche du header (vinyle) */
@@ -299,17 +292,7 @@ header {
   z-index: 1;                    /* Au-dessus des traits */
   pointer-events: none;          /* Le texte ne bloque pas les clics */
 }
-@media (max-width: 768px) {
-    form {
-        padding: 0 20px;
-    }
-}
 
-@media (max-width: 480px) {
-    form {
-        padding: 0 12px;
-    }
-}
 
 
 
