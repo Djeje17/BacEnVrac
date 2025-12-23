@@ -72,8 +72,19 @@ footer {
 .bouton {
     display: flex;
     width: 100%;
-    /* Aligne les boutons horizontalement */
 }
+
+.bouton a {
+    display: flex;      
+    flex: 1;
+}
+
+.bouton button {
+    width: 100%;
+    background-color: lawngreen;
+    border-radius: 0 0 6px 6px;
+}
+
 
 .bouton button,
 .bouton a {
