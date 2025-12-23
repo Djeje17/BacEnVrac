@@ -37,9 +37,10 @@ body::before {
 }
 
 main {
-    flex: 1;
-    /* Pousse le footer en bas */
+    flex: 1;/* Pousse le footer en bas */
+  width: 100%;  
 }
+
 
 header,
 footer {
