@@ -10,45 +10,46 @@
 
 <body>
 
-    
 
-        <header class="header">
-            <!-- Partie gauche du header : vinyle animé -->
-            <div class="header-left">
-                <div class="vinyl">
-                    <!-- Texte visible sur le vinyle qui tourne -->
-                    <div class="vinyl-text">BAC EN VRAC</div>
-                    <!-- Élément décoratif central -->
-                    <div class="label"></div>
-                    <!-- Trou central du disque vinyle -->
-                    <div class="hole"></div>
 
-                </div>
+    <header class="header">
+        <!-- Partie gauche du header : vinyle animé -->
+        <div class="header-left">
+            <div class="vinyl">
+                <!-- Texte visible sur le vinyle qui tourne -->
+                <div class="vinyl-text">BAC EN VRAC</div>
+                <!-- Élément décoratif central -->
+                <div class="label"></div>
+                <!-- Trou central du disque vinyle -->
+                <div class="hole"></div>
+
             </div>
+        </div>
 
-            <div class="header-center">
-                <strong>
-                    <h1>
-                        BAC<br>
-                        en<br>
-                        VRAC
-                    </h1>
-                </strong>
-            </div>
+        <div class="header-center">
+            <strong>
+                <h1>
+                    BAC<br>
+                    en<br>
+                    VRAC
+                </h1>
+            </strong>
+        </div>
 
-            <div class="header-right"></div>
+        <div class="header-right"></div>
 
-        </header>
-<main>
+    </header>
+    <main>
         <div class="bouton">
 
-            <a>
-                <button>inscription</button>
-            </a>
+            <button onclick="window.location.href='inscription.html'">
+                Inscription
+            </button>
 
-            <a href="connexion.html">
-                <button>connexion</button>
-            </a>
+            <button onclick="window.location.href='connexion.html'">
+                Connexion
+            </button>
+
 
         </div>
 
@@ -97,8 +98,8 @@
     </main>
 
     <div class="contenu-mobile">
-    <button class="retour" onclick="history.back()">RETOUR</button>
-</div>
+        <button class="retour" onclick="history.back()">RETOUR</button>
+    </div>
 
     <!-- Bouton profil affiché uniquement si connecté -->
     <a href="profil.html">
@@ -121,4 +122,5 @@
     <script src="scriptjs/dec.js"></script>
 
 </body>
+
 </html>

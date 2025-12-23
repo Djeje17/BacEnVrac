@@ -37,10 +37,10 @@ body::before {
 }
 
 main {
-    flex: 1;/* Pousse le footer en bas */
-  width: 100%;  
+    flex: 1;
+    /* Pousse le footer en bas */
+    width: 100%;
 }
-
 
 header,
 footer {
@@ -76,7 +76,7 @@ footer {
 }
 
 .bouton a {
-    display: flex;      
+    display: flex;
     flex: 1;
 }
 
@@ -94,7 +94,7 @@ footer {
     width: 100%;
     background-color: lawngreen;
     border-radius: 0 0 6px 6px;
-    
+
 }
 
 header h1 {
@@ -135,6 +135,7 @@ form button,
     width: 100%;
     box-sizing: border-box;
 }
+
 /* Conteneur avec marge mobile */
 .contenu-mobile {
     width: 100%;
@@ -202,6 +203,7 @@ button {
     padding: 10px;
     /* Espace intérieur pour un bouton plus confortable */
 }
+
 /* ===================== */
 /*        VINYLE         */
 /* ===================== */

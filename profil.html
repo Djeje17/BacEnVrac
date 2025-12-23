@@ -10,34 +10,34 @@
 
 <body>
 
-    <header class="header">
-      <!-- Partie gauche du header : vinyle animé -->
-      <div class="header-left">
-        <div class="vinyl">
-          <!-- Texte visible sur le disque vinyle en rotation -->
-          <div class="vinyl-text">BAC EN VRAC</div>
-          <!-- Élément décoratif central -->
-          <div class="label"></div>
-          <!-- Trou central du vinyle -->
-          <div class="hole"></div>
+  <header class="header">
+    <!-- Partie gauche du header : vinyle animé -->
+    <div class="header-left">
+      <div class="vinyl">
+        <!-- Texte visible sur le disque vinyle en rotation -->
+        <div class="vinyl-text">BAC EN VRAC</div>
+        <!-- Élément décoratif central -->
+        <div class="label"></div>
+        <!-- Trou central du vinyle -->
+        <div class="hole"></div>
 
-        </div>
       </div>
+    </div>
 
-      <div class="header-center">
-        <strong>
-          <h1>
-            BAC<br>
-            en<br>
-            VRAC
-          </h1>
-        </strong>
-      </div>
+    <div class="header-center">
+      <strong>
+        <h1>
+          BAC<br>
+          en<br>
+          VRAC
+        </h1>
+      </strong>
+    </div>
 
-      <div class="header-right"></div>
-</header>
-<main>
-    
+    <div class="header-right"></div>
+  </header>
+  <main>
+
 
     <div class="bouton">
       <button id="deconnexion">Se déconnecter</button>
@@ -65,24 +65,21 @@
 
     <div class="contenu-mobile">
       <div>
-    <button class="retour" onclick="history.back()">RETOUR</button>
-</div>
+        <button class="retour" onclick="history.back()">RETOUR</button>
+      </div>
 
-    <div>
-      <a href="index.html">
-        <button class="accueil">
-          retour accueil
+      <div>
+        <button class="accueil" onclick="window.location.href='index.html'">Retour accueil</button>
+
+      </div>
+      <!-- Bouton suppression du compte utilisateur -->
+      <div>
+        <button class="accueil" id="supprimerCompte">
+          Supprimer le compte
         </button>
-      </a>
+      </div>
     </div>
-    <!-- Bouton suppression du compte utilisateur -->
-    <div>
-      <button class="accueil" id="supprimerCompte">
-        Supprimer le compte
-      </button>
-    </div>
-    </div>
-    
+
     <script src="scriptjs/profil.js"></script>
 
   </main>
@@ -98,4 +95,5 @@
   </footer>
 
 </body>
+
 </html>
