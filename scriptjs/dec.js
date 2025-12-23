@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnProfil) btnProfil.style.display = "inline-block";
     if (btnDeconnexion) btnDeconnexion.style.display = "inline-block";
     if (userButtons) userButtons.style.display = "block";
-  } 
+  }
   // 👉 Si l'utilisateur n'est PAS connecté
   else {
     if (btnProfil) btnProfil.style.display = "none";

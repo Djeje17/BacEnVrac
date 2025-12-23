@@ -1,82 +1,100 @@
-
-
 /* Style général de la page */
 body {
-    text-align: center;                  /* Centre le texte par défaut */
-    font-family: Arial, sans-serif;      
-    display: flex;                      
-    flex-direction: column;              /* Organisation verticale */
-    background-color: aqua;              
-    min-height: 100vh;                   /* Hauteur minimum = hauteur de l’écran */
-    position: relative;                  /* Nécessaire pour le pseudo-élément ::before */
+    text-align: center;
+    /* Centre le texte par défaut */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* Organisation verticale */
+    background-color: aqua;
+    min-height: 100vh;
+    /* Hauteur minimum = hauteur de l’écran */
+    position: relative;
+    /* Nécessaire pour le pseudo-élément ::before */
 }
 
 /* Image de fond transparente placée derrière tout le contenu */
 body::before {
-    content: "";                         /* Pseudo-élément obligatoire */
-    position: fixed;                     /* Reste fixe lors du scroll */
-    inset: 0;                            /* Équivaut à top/right/bottom/left: 0 */
-    background-image: url("image/bacdisque.jpg"); /* Image de fond */
-    background-size: cover;              /* L’image couvre tout l’écran */
-    background-position: center;         /* Centre l’image */
-    background-repeat: no-repeat;        /* Pas de répétition */
-    opacity: 0.20;                       /* Transparence de l’image */
-    z-index: -1;                         /* Place l’image derrière le contenu */
+    content: "";
+    /* Pseudo-élément obligatoire */
+    position: fixed;
+    /* Reste fixe lors du scroll */
+    inset: 0;
+    /* Équivaut à top/right/bottom/left: 0 */
+    background-image: url("image/bacdisque.jpg");
+    /* Image de fond */
+    background-size: cover;
+    /* L’image couvre tout l’écran */
+    background-position: center;
+    /* Centre l’image */
+    background-repeat: no-repeat;
+    /* Pas de répétition */
+    opacity: 0.20;
+    /* Transparence de l’image */
+    z-index: -1;
+    /* Place l’image derrière le contenu */
 }
 
 
 main {
-    flex: 1;                             /* Pousse le footer en bas */
+    flex: 1;
+    /* Pousse le footer en bas */
 }
 
 
 header,
 footer {
-    background-color: fuchsia;           
-    width: 100%;                         
+    background-color: fuchsia;
+    width: 100%;
 }
 
 
 .img {
-    width: 100%;                       
-    max-width: 100%;                     
-    height: auto;                       
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 
 .mag {
-    max-height: 40px;                    
-    width: auto;                        
+    max-height: 40px;
+    width: auto;
 }
 
 
 footer {
-    display: flex;                       
-    align-items: center;                 /* Alignement vertical */
-    justify-content: center;             /* Alignement horizontal */
-    gap: 40px;                           /* Espace entre les éléments */
+    display: flex;
+    align-items: center;
+    /* Alignement vertical */
+    justify-content: center;
+    /* Alignement horizontal */
+    gap: 40px;
+    /* Espace entre les éléments */
 }
 
 
 .bouton {
     display: flex;
-  width: 100%;                       /* Aligne les boutons horizontalement */
+    width: 100%;
+    /* Aligne les boutons horizontalement */
 }
 
 
 .bouton button,
 .bouton a {
-    flex: 1;                             /* Tous les boutons prennent la même largeur */
-    width: 100%;                         
-    background-color: lawngreen;         
-    border-radius: 0 0 6px 6px;           
+    flex: 1;
+    /* Tous les boutons prennent la même largeur */
+    width: 100%;
+    background-color: lawngreen;
+    border-radius: 0 0 6px 6px;
 }
 
 
 header h1 {
-    margin: 0;                           
+    margin: 0;
 }
-h2{
+
+h2 {
     margin-bottom: 50px;
 }
 
@@ -107,7 +125,8 @@ form {
 input,
 form button {
     width: 100%;
-    box-sizing: border-box;  /* ✅ clé du bon alignement */
+    box-sizing: border-box;
+    /* ✅ clé du bon alignement */
 }
 
 
@@ -131,40 +150,42 @@ main,
 
 
 label {
-    display: block;                      /* Chaque label sur une ligne */
-    margin-bottom: 5px;                  
-    text-align: left;                    
+    display: block;
+    /* Chaque label sur une ligne */
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 
 input {
-    width: 100%;                         
-    padding: 10px;                       
-    margin-bottom: 15px;                 
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 
 .envoi {
-    width: 100%;                         
-    margin-top: 40px;                    
-    margin-bottom: 30px;                 
-    background-color: cornflowerblue;    
-    border-radius: 6px;   
-                  
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    background-color: cornflowerblue;
+    border-radius: 6px;
+
 }
 
 .retour {
-    margin-bottom: 30px;                 
-    margin-top: 20px;                    
-    max-width: 200px;                    
-    background-color: cornflowerblue;   
-    border-radius: 6px;                  
+    margin-bottom: 30px;
+    margin-top: 20px;
+    max-width: 200px;
+    background-color: cornflowerblue;
+    border-radius: 6px;
 }
 
 
 form {
     padding: 1px;
 }
+
 form button {
     width: 100%;
     box-sizing: border-box;
@@ -173,24 +194,26 @@ form button {
 
 
 button {
-    width: 100%;                         
-    padding: 5px;                       
+    width: 100%;
+    padding: 5px;
 }
 
 
 .accueil {
     width: 100%;
-    max-width: 180px;                   
-    margin-bottom: 30px;                
-    padding: 5px;                       
-    background-color: cornflowerblue;   
-    border-radius: 10px;                
+    max-width: 180px;
+    margin-bottom: 30px;
+    padding: 5px;
+    background-color: cornflowerblue;
+    border-radius: 10px;
 }
 
 /* Boutons larges : prennent toute la largeur disponible */
 .bout {
-    width: 100%;                 /* Le bouton occupe 100% de son conteneur */
-    padding: 10px;               /* Espace intérieur pour un bouton plus confortable */
+    width: 100%;
+    /* Le bouton occupe 100% de son conteneur */
+    padding: 10px;
+    /* Espace intérieur pour un bouton plus confortable */
 }
 
 /* ===================== */
@@ -198,57 +221,92 @@ button {
 /* ===================== */
 
 .vinyl {
-  width: 100px;                  /* Diamètre du disque */
-  height: 100px;                 /* Hauteur = largeur → cercle */
-  border-radius: 50%;            /* Transforme le carré en cercle */
-  background: #000;              /* Couleur noire du vinyle */
-  animation: spin 2.5s linear infinite; /* Rotation continue et fluide */
+    width: 100px;
+    /* Diamètre du disque */
+    height: 100px;
+    /* Hauteur = largeur → cercle */
+    border-radius: 50%;
+    /* Transforme le carré en cercle */
+    background: #000;
+    /* Couleur noire du vinyle */
+    animation: spin 2.5s linear infinite;
+    /* Rotation continue et fluide */
 }
 
 /* Traits radiaux pour visualiser la rotation */
 .vinyl::before {
-  content: "";                   /* Obligatoire pour afficher le pseudo-élément */
-  position: absolute;            /* Positionné par rapport au vinyle */
-  inset: 0;                      /* Colle aux 4 bords */
-  border-radius: 50%;            /* Conserve la forme circulaire */
-  background:
-    repeating-conic-gradient(
-      from 0deg,                 /* Départ du gradient */
-      #f95454 0deg 3deg,         /* Trait rouge fin */
-      #000 3deg 40deg            /* Espace noir large */
-    );
+    content: "";
+    /* Obligatoire pour afficher le pseudo-élément */
+    position: absolute;
+    /* Positionné par rapport au vinyle */
+    inset: 0;
+    /* Colle aux 4 bords */
+    border-radius: 50%;
+    /* Conserve la forme circulaire */
+    background:
+        repeating-conic-gradient(from 0deg,
+            /* Départ du gradient */
+            #f95454 0deg 3deg,
+            /* Trait rouge fin */
+            #000 3deg 40deg
+            /* Espace noir large */
+        );
 }
 
 /* Petit label décoratif au centre */
 .label {
-  position: absolute;            /* Position libre dans le vinyle */
-  top: 50%;                      /* Centre vertical */
-  left: 50%;                     /* Centre horizontal */
-  width: 10px;                   /* Taille du label */
-  height: 10px;
-  background: #c33;              /* Rouge foncé */
-  border-radius: 50%;            /* Cercle parfait */
-  transform: translate(-50%, -50%); /* Centrage précis */
-  z-index: 2;                    /* Au-dessus des traits */
+    position: absolute;
+    /* Position libre dans le vinyle */
+    top: 50%;
+    /* Centre vertical */
+    left: 50%;
+    /* Centre horizontal */
+    width: 10px;
+    /* Taille du label */
+    height: 10px;
+    background: #c33;
+    /* Rouge foncé */
+    border-radius: 50%;
+    /* Cercle parfait */
+    transform: translate(-50%, -50%);
+    /* Centrage précis */
+    z-index: 2;
+    /* Au-dessus des traits */
 }
 
 /* Trou central du vinyle */
 .hole {
-  position: absolute;            /* Position libre */
-  top: 50%;                      /* Centre vertical */
-  left: 50%;                     /* Centre horizontal */
-  width: 10px;                   /* Taille du trou */
-  height: 10px;
-  background: #000;              /* Noir (vide) */
-  border-radius: 50%;            /* Cercle */
-  transform: translate(-50%, -50%); /* Centrage parfait */
-  z-index: 3;                    /* Au-dessus de tout */
+    position: absolute;
+    /* Position libre */
+    top: 50%;
+    /* Centre vertical */
+    left: 50%;
+    /* Centre horizontal */
+    width: 10px;
+    /* Taille du trou */
+    height: 10px;
+    background: #000;
+    /* Noir (vide) */
+    border-radius: 50%;
+    /* Cercle */
+    transform: translate(-50%, -50%);
+    /* Centrage parfait */
+    z-index: 3;
+    /* Au-dessus de tout */
 }
 
 /* Animation de rotation */
 @keyframes spin {
-  from { transform: rotate(0deg); }   /* Départ sans rotation */
-  to   { transform: rotate(360deg); } /* Un tour complet */
+    from {
+        transform: rotate(0deg);
+    }
+
+    /* Départ sans rotation */
+    to {
+        transform: rotate(360deg);
+    }
+
+    /* Un tour complet */
 }
 
 /* ===================== */
@@ -256,48 +314,62 @@ button {
 /* ===================== */
 
 header {
-  display: flex;                 /* Organisation horizontale */
-  align-items: center;           /* Centrage vertical des éléments */
-  padding: 0px;                  
-  height: 120px;                 /* Hauteur fixe du header */
-  background-color: fuchsia;     
+    display: flex;
+    /* Organisation horizontale */
+    align-items: center;
+    /* Centrage vertical des éléments */
+    padding: 0px;
+    height: 120px;
+    /* Hauteur fixe du header */
+    background-color: fuchsia;
 }
 
 /* Zone gauche du header (vinyle) */
 .header-left {
-  margin-left: 30px;             /* Distance de 30px du bord gauche */
-  display: flex;                 /* Flexbox interne */
-  align-items: center;           /* Vinyle centré verticalement */
+    margin-left: 30px;
+    /* Distance de 30px du bord gauche */
+    display: flex;
+    /* Flexbox interne */
+    align-items: center;
+    /* Vinyle centré verticalement */
 }
 
 /* Zone centrale (titre) */
 .header-center {
-  flex: 1;                       /* Prend tout l’espace restant */
-  text-align: center;            /* Texte centré horizontalement */
+    flex: 1;
+    /* Prend tout l’espace restant */
+    text-align: center;
+    /* Texte centré horizontalement */
 }
 
 /* Zone droite (réserve d’espace) */
 .header-right {
-  width: 100px;                  /* Largeur fixe pour l’équilibre visuel */
+    width: 100px;
+    /* Largeur fixe pour l’équilibre visuel */
 }
 
 /* Texte "BAC EN VRAC" affiché sur le vinyle */
 .vinyl-text {
-  position: absolute;            /* Positionné dans le vinyle */
-  top: 50%;                      /* Centre vertical */
-  left: 50%;                     /* Centre horizontal */
-  transform: translate(-50%, -50%); /* Centrage précis */
-  color: rgb(255, 255, 255);     /* Texte blanc (contraste fort) */
-  font-weight: bold;             /* Texte épais */
-  font-size: 16px;               /* Taille lisible */
-  letter-spacing: 2px;           /* Espacement des lettres (style vinyle) */
-  text-transform: uppercase;     /* Tout en majuscules */
-  z-index: 1;                    /* Au-dessus des traits */
-  pointer-events: none;          /* Le texte ne bloque pas les clics */
+    position: absolute;
+    /* Positionné dans le vinyle */
+    top: 50%;
+    /* Centre vertical */
+    left: 50%;
+    /* Centre horizontal */
+    transform: translate(-50%, -50%);
+    /* Centrage précis */
+    color: rgb(255, 255, 255);
+    /* Texte blanc (contraste fort) */
+    font-weight: bold;
+    /* Texte épais */
+    font-size: 16px;
+    /* Taille lisible */
+    letter-spacing: 2px;
+    /* Espacement des lettres (style vinyle) */
+    text-transform: uppercase;
+    /* Tout en majuscules */
+    z-index: 1;
+    /* Au-dessus des traits */
+    pointer-events: none;
+    /* Le texte ne bloque pas les clics */
 }
-
-
-
-
-
-    
