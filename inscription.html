@@ -6,33 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>Document</title>
-
 </head>
 
 <body>
 
-
     <main class="contenu">
 
-
         <header class="header">
-
             <!-- Partie gauche du header : vinyle animé -->
             <div class="header-left">
                 <div class="vinyl">
-
                     <!-- Texte visible sur le vinyle qui tourne -->
                     <div class="vinyl-text">BAC EN VRAC</div>
-
                     <!-- Élément décoratif central -->
                     <div class="label"></div>
-
                     <!-- Trou central du disque vinyle -->
                     <div class="hole"></div>
 
                 </div>
             </div>
-
 
             <div class="header-center">
                 <strong>
@@ -44,18 +36,15 @@
                 </strong>
             </div>
 
-
             <div class="header-right"></div>
 
         </header>
 
         <div class="bouton">
 
-
             <a>
                 <button>inscription</button>
             </a>
-
 
             <a href="connexion.html">
                 <button>connexion</button>
@@ -63,53 +52,42 @@
 
         </div>
 
-
         <h2>INSCRIPTION</h2>
-
 
         <h3>Veuillez remplir tous les champs</h3>
 
-
         <div class="group">
 
-
             <form id="formInscription">
-
 
                 <div class="form">
                     <label>Nom</label>
                     <input type="text" id="nom" required>
                 </div>
 
-
                 <div class="form">
                     <label>Prénom</label>
                     <input type="text" id="prenom" required>
                 </div>
-
 
                 <div class="form">
                     <label>Adresse</label>
                     <input type="text" id="adresse" required>
                 </div>
 
-
                 <div class="form">
                     <label>Email</label>
                     <input type="email" id="email" required>
                 </div>
-
 
                 <div class="form">
                     <label>Mot de passe</label>
                     <input type="password" id="motdepasse" required>
                 </div>
 
-
                 <button class="envoi" type="submit">ENVOYER</button>
 
             </form>
-
 
             <script src="scriptjs/inscription.js"></script>
 
@@ -120,7 +98,6 @@
     <div>
         <button class="retour" onclick="history.back()">RETOUR</button>
     </div>
-
     <!-- Bouton profil affiché uniquement si connecté -->
     <a href="profil.html">
         <button class="accueil" id="btn-profil" style="display:none;">
@@ -128,23 +105,18 @@
         </button>
     </a>
 
-
     <footer>
-
 
         <p>
             mentions légales &nbsp;&nbsp;&nbsp;&nbsp;contact
         </p>
 
-
         <img src="image/instagram.svg" class="mag">
         <img src="image/facebook.svg" class="mag">
 
     </footer>
-
     <!-- Script JS pour gérer la connexion / déconnexion -->
     <script src="scriptjs/dec.js"></script>
 
 </body>
-
 </html>

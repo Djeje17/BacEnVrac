@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const estConnecte = !!localStorage.getItem("connecte");
 
-
   // 👉 Si l'utilisateur est connecté
   if (estConnecte) {
     if (btnProfil) btnProfil.style.display = "inline-block";
