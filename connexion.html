@@ -10,8 +10,6 @@
 
 <body>
 
-    <main>
-
         <header class="header">
 
             <!-- Zone gauche du header : vinyle animé -->
@@ -40,13 +38,15 @@
 
         </header>
 
+<main>
+
         <div class="bouton">
             <button class="bout"></button>
         </div>
 
         <h2>CONNEXION</h2>
 
-        <form id="formConnexion">
+        <form class="group contenu-mobile" id="formConnexion">
 
             <label>Email</label>
             <input type="email" id="email" required>
@@ -62,9 +62,9 @@
 
         <script src="scriptjs/connexion.js"></script>
 
-        <div>
-            <button class="retour" onclick="history.back()">RETOUR</button>
-        </div>
+        <div class="contenu-mobile">
+    <button class="retour" onclick="history.back()">RETOUR</button>
+</div>
 
         <!-- Bouton profil (caché par défaut, affiché si connecté) -->
         <a href="profil.html">

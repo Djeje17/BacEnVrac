@@ -11,6 +11,7 @@ body {
     /* Hauteur minimum = hauteur de l’écran */
     position: relative;
     /* Nécessaire pour le pseudo-élément ::before */
+    margin: 0;
 }
 
 /* Image de fond transparente placée derrière tout le contenu */
@@ -35,19 +36,16 @@ body::before {
     /* Place l’image derrière le contenu */
 }
 
-
 main {
     flex: 1;
     /* Pousse le footer en bas */
 }
-
 
 header,
 footer {
     background-color: fuchsia;
     width: 100%;
 }
-
 
 .img {
     width: 100%;
@@ -56,12 +54,10 @@ footer {
     margin-top: 20px;
 }
 
-
 .mag {
     max-height: 40px;
     width: auto;
 }
-
 
 footer {
     display: flex;
@@ -73,13 +69,11 @@ footer {
     /* Espace entre les éléments */
 }
 
-
 .bouton {
     display: flex;
     width: 100%;
     /* Aligne les boutons horizontalement */
 }
-
 
 .bouton button,
 .bouton a {
@@ -88,8 +82,8 @@ footer {
     width: 100%;
     background-color: lawngreen;
     border-radius: 0 0 6px 6px;
+    
 }
-
 
 header h1 {
     margin: 0;
@@ -102,7 +96,6 @@ h2 {
 /* ============================= */
 /* FORMULAIRE                   */
 /* ============================= */
-
 
 form {
 
@@ -124,31 +117,19 @@ form {
 }
 
 input,
-form button {
+form button,
+.envoi,
+.retour {
     width: 100%;
     box-sizing: border-box;
-    /* ✅ clé du bon alignement */
 }
-
-
-/* ============================= */
-/* CONTENEUR PRINCIPAL           */
-/* ============================= */
-
-main,
-.contenu {
-
+/* Conteneur avec marge mobile */
+.contenu-mobile {
+    width: 100%;
     padding-left: 16px;
-
-    /* Ajoute un espace de 16px à droite
-       → même confort visuel des deux côtés */
     padding-right: 16px;
-
-    /* Inclut le padding dans la largeur totale
-       → évite les débordements horizontaux */
     box-sizing: border-box;
 }
-
 
 label {
     display: block;
@@ -157,13 +138,11 @@ label {
     text-align: left;
 }
 
-
 input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
 }
-
 
 .envoi {
     width: 100%;
@@ -171,7 +150,6 @@ input {
     margin-bottom: 30px;
     background-color: cornflowerblue;
     border-radius: 6px;
-
 }
 
 .retour {
@@ -182,7 +160,6 @@ input {
     border-radius: 6px;
 }
 
-
 form {
     padding: 1px;
 }
@@ -192,13 +169,10 @@ form button {
     box-sizing: border-box;
 }
 
-
-
 button {
     width: 100%;
     padding: 5px;
 }
-
 
 .accueil {
     width: 100%;
@@ -216,7 +190,6 @@ button {
     padding: 10px;
     /* Espace intérieur pour un bouton plus confortable */
 }
-
 /* ===================== */
 /*        VINYLE         */
 /* ===================== */

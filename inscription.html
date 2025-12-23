@@ -10,7 +10,7 @@
 
 <body>
 
-    <main class="contenu">
+    
 
         <header class="header">
             <!-- Partie gauche du header : vinyle animé -->
@@ -39,7 +39,7 @@
             <div class="header-right"></div>
 
         </header>
-
+<main>
         <div class="bouton">
 
             <a>
@@ -56,7 +56,8 @@
 
         <h3>Veuillez remplir tous les champs</h3>
 
-        <div class="group">
+        <div class="group contenu-mobile">
+
 
             <form id="formInscription">
 
@@ -95,9 +96,10 @@
 
     </main>
 
-    <div>
-        <button class="retour" onclick="history.back()">RETOUR</button>
-    </div>
+    <div class="contenu-mobile">
+    <button class="retour" onclick="history.back()">RETOUR</button>
+</div>
+
     <!-- Bouton profil affiché uniquement si connecté -->
     <a href="profil.html">
         <button class="accueil" id="btn-profil" style="display:none;">
